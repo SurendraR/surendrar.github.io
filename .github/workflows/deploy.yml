@@ -10,6 +10,13 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - name: Start ssh-agent and add SSH key
+        env:
+          ssh-private-key: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+         eval "$(ssh-agent -s)"
+         echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add -
+
       - name: Setup SSH Key
         uses: webfactory/ssh-agent@v0.8.0
         with:
