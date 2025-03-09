@@ -17,10 +17,10 @@ jobs:
           echo "$SSH_PRIVATE_KEY" > private.key
           sudo chmod 400 private.key
       
-      - name: Docker Dependencies
-        run: |
-            eval `ssh-agent -s`
-            ssh-add private.key
+      # - name: Docker Dependencies
+      #   run: |
+      #       eval `ssh-agent -s`
+      #       ssh-add private.key
       # - name: Start ssh-agent and add SSH key
       #   env:
       #     ssh-private-key: ${{ secrets.GITHUB_TOKEN }}
