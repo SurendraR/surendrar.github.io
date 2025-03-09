@@ -1,55 +1,46 @@
-name: Deploy
+name: Deploy to GitHub Pages
+
 on:
   push:
-    branches: [main]
+    branches: [ main ]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
+      - name: Checkout repository
         uses: actions/checkout@v4
-      
-      - name: Setup SSH Keys and known_hosts
-        env:
-            SSH_AUTH_SOCK: /tmp/ssh_agent.sock
-        run: |
-                  mkdir -p ~/.ssh
-                  ssh-keyscan github.com >> ~/.ssh/known_hosts
-                  ssh-agent -a $SSH_AUTH_SOCK > /dev/null
-                  ssh-add - <<< "${{ secrets.GITHUB_TOKEN }}"
-      # - name: Create SSH key
-      #   env:
-      #     SSH_PRIVATE_KEY: ${{secrets.GITHUB_TOKEN}}
-      #   run: |
-      #     echo "$SSH_PRIVATE_KEY" > private.key
-      #     sudo chmod 400 private.key
-      
-      # - name: Docker Dependencies
-      #   run: |
-      #       eval `ssh-agent -s`
-      #       ssh-add private.key
-      # - name: Start ssh-agent and add SSH key
-      #   env:
-      #     ssh-private-key: ${{ secrets.GITHUB_TOKEN }}
-      #   run: |
-      #    eval "$(ssh-agent -s)"
-      #    echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add -
 
-      # - name: Setup SSH Key
-      #   uses: webfactory/ssh-agent@v0.8.0
-      #   with:
-      #     ssh-private-key: ${{ secrets.GITHUB_TOKEN }}          
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
 
       - name: Install dependencies
-        run: npm install
+        run: npm ci
 
       - name: Build project
         run: npm run build
 
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
       - name: Deploy to GitHub Pages
-        run: |
-          git config --global user.name "GitHub Actions"
-          git config --global user.email "actions@github.com"
-          git remote set-url origin git@github.com:SurendraR/surendrar.github.io.git
-          npm run deploy # Or your custom deploy command
+        id: deployment
+        uses: actions/deploy-pages@v4
