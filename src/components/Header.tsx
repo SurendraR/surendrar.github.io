@@ -3,7 +3,7 @@ import { Github, Linkedin,FileUser , Mail, MapPin, Code2, BriefcaseBusiness, Dat
 import { Profile } from '../types';
 import { motion } from 'framer-motion';
 import myProfileImage from '../assets/myprofile.jpeg';
-import Pdf from '../assets/Senior Software Engineer-Dotnet Angular Fullstack.pdf'
+import Pdf from '../assets/surendra_rayapati.pdf'
 
 interface HeaderProps {
   profile: Profile;
