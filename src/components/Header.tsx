@@ -3,21 +3,16 @@ import { Github, Linkedin,FileUser , Mail, MapPin, Code2, BriefcaseBusiness, Dat
 import { Profile } from '../types';
 import { motion } from 'framer-motion';
 import myProfileImage from '../assets/myprofile.jpeg';
+import Pdf from '../assets/Senior Software Engineer-Dotnet Angular Fullstack.pdf'
 
 interface HeaderProps {
   profile: Profile;
 }
 
-// const handleDownload = () => {
-//   const url = '/assets/Senior Software Engineer-Dotnet Angular Fullstack.pdf'; // Path to your PDF
-//   const link = document.createElement('a');
-//   link.href = url;
-//   link.download = 'Senior Software Engineer-Dotnet Angular Fullstack.pdf';
-//   document.body.appendChild(link);
-//   link.click();
-//   document.body.removeChild(link);
-// };
-  
+const openPDFile = (url: string) => {
+  window.open(url, '_blank', 'noopener,noreferrer');
+};
+
 
 export function Header({ profile }: HeaderProps) {
   return (
@@ -63,10 +58,7 @@ export function Header({ profile }: HeaderProps) {
                 />
               </div>
               <div className='flex flex-wrap gap-4 items-center justify-center md:justify-start mb-6 p-4'>
-              <a
-                  href='/assets/Senior Software Engineer-Dotnet Angular Fullstack.pdf'
-                  target="_blank"
-                  rel="noopener noreferrer"
+              <a  href={Pdf} rel="noopener noreferrer" target="_blank"                  
                   className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 hover:bg-white/20 transition-colors duration-300"
                 >
                   <FileUser size={18} />
