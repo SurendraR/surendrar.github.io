@@ -9,11 +9,6 @@ interface HeaderProps {
   profile: Profile;
 }
 
-const openPDFile = (url: string) => {
-  window.open(url, '_blank', 'noopener,noreferrer');
-};
-
-
 export function Header({ profile }: HeaderProps) {
   return (
     <header className="relative bg-gradient-to-r from-primary-900 via-primary-800 to-primary-900 text-white py-20">
