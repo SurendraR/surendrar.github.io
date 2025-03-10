@@ -26,9 +26,9 @@ export const profile: Profile = {
 };
 
 export const skills: Skill[] = [
-  { name: "Angular", rating: 4, yearsOfExperience: 6 },
   { name: "C#", rating: 4, yearsOfExperience: 13 },
   { name: ".Net 8/.Net Core", rating: 4, yearsOfExperience: 5 },
+  { name: "Angular", rating: 4, yearsOfExperience: 6 },    
   { name: ".Net Framework", rating: 4, yearsOfExperience: 7 },
   { name: "Azure Cloud", rating: 2.5, yearsOfExperience: 3 },
   { name: "SQL Server", rating: 3.5, yearsOfExperience: 8 },
@@ -48,17 +48,18 @@ export const projects: Project[] = [
     "endDate": "Present",
     "technologies": [
       ".Net 8",
-      "JSON schemas",
-      "Azure Cloud",
+      "Angular",
+      "Azure Cloud",      
       "SQL Server",
+      "TypeScript",
       "HTML5",
       "CSS3",
-      "TypeScript",
-      "Angular",
-      "JSON",
       "Bootstrap",
+      "JSON",      
       "NGRX",
-      "Jasmine"
+      "Jasmine",      
+      "Dapper",
+      "Docker" 
     ],
     "achievements": [
       "Accelerated project velocity by translating complex NCDOT requirements into actionable user stories, resulting in a well-defined product backlog.",
@@ -79,11 +80,11 @@ export const projects: Project[] = [
     "endDate": "2024-03",
     "technologies": [
       ".Net Core 3.1",
+      "Angular",
       "SQL Server",
       "Azure Cloud",
       "HTML5",      
-      "Docker",      
-      "Angular"
+      "Docker"      
     ],
     "achievements": [
       "Successfully transitioned product handover, empowering team members with the knowledge to utilize diverse applications.",
@@ -107,8 +108,8 @@ export const projects: Project[] = [
       "Angular 14",
       "HighCharts",
       "AgGrid",
-      "Big Query",
-      "Azure Cloud"
+      "Azure Cloud",      
+      "Big Query"      
     ],
     "achievements": [
       "Enhanced development efficiency by spearheading application development using Micron's internal framework.",
@@ -128,12 +129,11 @@ export const projects: Project[] = [
     "startDate": "2019-08",
     "endDate": "2021-10",
     "technologies": [
+      ".Net Core",
       "Angular",
       "Angular Material",
-      "Bootstrap",
-      ".Net Core",
-      "Cosmos DB",
-      "SQL Server"
+      "Bootstrap",      
+      "Cosmos DB"
     ],
     "achievements": [
       "Accelerated product development by leading the development of Angular application architecture and identifying key libraries.",
@@ -174,7 +174,7 @@ export const projects: Project[] = [
   {
     "title": "MBPM",
     "companyName": "OpenText",
-    "description": "It's a business process management product of OpenText Technologies. Itâ€™s developed to automate the business processes followed by organizations.",
+    "description": "It's a business process management product of OpenText Technologies. It's developed to automate the business processes followed by organizations.",
     "location": "Hyderabad, India",
     "role": "Lead Software Engineer",
     "startDate": "2016-02",
@@ -232,7 +232,8 @@ export const projects: Project[] = [
     "technologies": [
       "C#.NET",
       "ADO.NET",
-      "Entity Framework"
+      "Entity Framework",
+      "JQuery"
     ],
     "achievements": [
       "Streamlined software development by contributing to full software development lifecycle, including analysis, development, testing and support",
