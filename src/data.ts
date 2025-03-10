@@ -147,7 +147,7 @@ export const projects: Project[] = [
   {
     "title": "eDocs",
     "companyName": "OpenText",
-    "description": "EDocs is the content management product of OpenText Technologies with most of the customers in the law industry. It has various clients like Office client, Outlook, Windows Explorer Extension and SMART UI. Iâ€™ve been part of EDOCS SMART UI development for with Angular 6 and typescript. Also... involved in enhancing EDOCs product features and maintenance which involves work on .Net MVC web application, batch jobs, and SSIS packages and python.",
+    "description": "EDocs is the content management product of OpenText Technologies with most of the customers in the law industry. It has various clients like Office client, Outlook, Windows Explorer Extension and SMART UI. I've been part of EDOCS SMART UI development for with Angular 6 and typescript. Also... involved in enhancing EDOCs product features and maintenance which involves work on .Net MVC web application, batch jobs, and SSIS packages and python.",
     "location": "Hyderabad, India",
     "role": "Lead Software Engineer",
     "startDate": "2016-02",
@@ -174,7 +174,7 @@ export const projects: Project[] = [
   {
     "title": "MBPM",
     "companyName": "OpenText",
-    "description": "Itâ€™s a business process management product of OpenText Technologies. Itâ€™s developed to automate the business processes followed by organizations.",
+    "description": "It's a business process management product of OpenText Technologies. Itâ€™s developed to automate the business processes followed by organizations.",
     "location": "Hyderabad, India",
     "role": "Lead Software Engineer",
     "startDate": "2016-02",
@@ -224,7 +224,7 @@ export const projects: Project[] = [
   {
     "title": "AHM eQuote",
     "companyName": "Wipro",
-    "description": "Itâ€™s a system where the business users can request a quotation to supplier for spare parts and compare them before finalizing the supplier.",
+    "description": "It's a system where the business users can request a quotation to supplier for spare parts and compare them before finalizing the supplier.",
     "location": "Hyderabad, India",
     "role": "Senior Software Engineer",
     "startDate": "2010-11",
