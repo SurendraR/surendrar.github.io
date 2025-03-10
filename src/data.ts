@@ -7,7 +7,22 @@ export const profile: Profile = {
   location: "Raleigh, North Carolina, USA",
   email: "srayapati28@gmail.com",
   github: "https://github.com/SurendraR",
-  linkedin: "https://linkedin.com/in/surendra-rayapati"
+  linkedin: "https://linkedin.com/in/surendra-rayapati",
+  blog: "https://itsmycodeworld.blogspot.com",
+  certifications: [
+    {
+      name: "Azure Developer Associate",
+      issuer: "Microsoft",
+      date: "Jan 2024-Jan 26",
+      url: "https://learn.microsoft.com/en-us/users/rayapatimvpconsultingplusincsurend-6526/credentials/cee47a8730795f72"
+    },
+    {
+      name: "NodeJS & MEAN Stack - for Beginners - In Easy way!",
+      issuer: "Udemy",
+      date: "Jan 2021",
+      url: "https://www.udemy.com/certificate/UC-fea1477d-d3cf-4660-9bf7-03e9851f6974/"
+    }
+  ]
 };
 
 export const skills: Skill[] = [
