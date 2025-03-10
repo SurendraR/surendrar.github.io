@@ -1,5 +1,5 @@
 import React from 'react';
-import { Github, Linkedin, Mail, MapPin, Code2, BriefcaseBusiness, Database, Cloud, BookOpen, Award } from 'lucide-react';
+import { Github, Linkedin,FileUser , Mail, MapPin, Code2, BriefcaseBusiness, Database, Cloud, BookOpen, Award } from 'lucide-react';
 import { Profile } from '../types';
 import { motion } from 'framer-motion';
 import myProfileImage from '../assets/myprofile.jpeg';
@@ -7,6 +7,17 @@ import myProfileImage from '../assets/myprofile.jpeg';
 interface HeaderProps {
   profile: Profile;
 }
+
+// const handleDownload = () => {
+//   const url = '/assets/Senior Software Engineer-Dotnet Angular Fullstack.pdf'; // Path to your PDF
+//   const link = document.createElement('a');
+//   link.href = url;
+//   link.download = 'Senior Software Engineer-Dotnet Angular Fullstack.pdf';
+//   document.body.appendChild(link);
+//   link.click();
+//   document.body.removeChild(link);
+// };
+  
 
 export function Header({ profile }: HeaderProps) {
   return (
@@ -50,6 +61,18 @@ export function Header({ profile }: HeaderProps) {
                   alt={profile.name}
                   className="w-full h-full object-cover"
                 />
+              </div>
+              <div className='flex flex-wrap gap-4 items-center justify-center md:justify-start mb-6 p-4'>
+              <a
+                  href='/assets/Senior Software Engineer-Dotnet Angular Fullstack.pdf'
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 hover:bg-white/20 transition-colors duration-300"
+                >
+                  <FileUser size={18} />
+                  <span className="text-sm">Resume</span>
+                </a>                
+                {/* <button onClick={handleDownload}>Resume</button>               */}
               </div>
             </motion.div>
 
