@@ -1,2 +1,3 @@
 # myportfolio
-My Portfolio website
+
+This is React application to highlight skills and experience.
