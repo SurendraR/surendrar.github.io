@@ -3,7 +3,8 @@ import { Github, Linkedin,FileUser , Mail, MapPin, Code2, BriefcaseBusiness, Dat
 import { Profile } from '../types';
 import { motion } from 'framer-motion';
 import myProfileImage from '../assets/myprofile.jpeg';
-import Pdf from '../assets/surendra_rayapati.pdf'
+import Pdf from '../assets/surendra_rayapati.pdf';
+import { validateUrl } from '../utils/urlValidation';
 
 interface HeaderProps {
   profile: Profile;
@@ -53,7 +54,7 @@ export function Header({ profile }: HeaderProps) {
                 />
               </div>
               <div className='flex flex-wrap gap-4 items-center justify-center md:justify-start mb-6 p-4'>
-              <a  href={Pdf} rel="noopener noreferrer" target="_blank"                  
+              <a  href={validateUrl(Pdf)} rel="noopener noreferrer" target="_blank"                  
                   className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 hover:bg-white/20 transition-colors duration-300"
                 >
                   <FileUser size={18} />
@@ -92,14 +93,14 @@ export function Header({ profile }: HeaderProps) {
                 transition={{ duration: 0.6, delay: 0.4 }}
               >
                 <a
-                  href={`mailto:${profile.email}`}
+                  href={validateUrl(`mailto:${profile.email}`)}
                   className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 hover:bg-white/20 transition-colors duration-300"
                 >
                   <Mail size={18} />
                   <span className="text-sm">{profile.email}</span>
                 </a>
                 <a
-                  href={profile.github}
+                  href={validateUrl(profile.github)}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 hover:bg-white/20 transition-colors duration-300"
@@ -108,7 +109,7 @@ export function Header({ profile }: HeaderProps) {
                   <span className="text-sm">GitHub</span>
                 </a>
                 <a
-                  href={profile.linkedin}
+                  href={validateUrl(profile.linkedin)}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 hover:bg-white/20 transition-colors duration-300"
@@ -117,7 +118,7 @@ export function Header({ profile }: HeaderProps) {
                   <span className="text-sm">LinkedIn</span>
                 </a>
                 <a
-                  href={profile.blog}
+                  href={validateUrl(profile.blog)}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 hover:bg-white/20 transition-colors duration-300"
@@ -170,7 +171,7 @@ export function Header({ profile }: HeaderProps) {
             {profile.certifications.map((cert) => (
               <a
                 key={cert.name}
-                href={cert.url}
+                href={validateUrl(cert.url)}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-3 p-3 bg-white/10 rounded-lg hover:bg-white/15 transition-colors duration-300"
