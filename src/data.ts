@@ -8,7 +8,7 @@ export const profile: Profile = {
   email: "srayapati28@gmail.com",
   github: "https://github.com/SurendraR",
   linkedin: "https://linkedin.com/in/surendra-rayapati",
-  blog: "https://itsmycodeworld.blogspot.com",
+  blog: "https://byteversity.blogspot.com",
   certifications: [
     {
       name: "Azure Developer Associate",
